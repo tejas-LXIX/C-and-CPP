@@ -13,6 +13,7 @@ int main()
     s1['k']=11;
     s1.insert(pair<char,int>('z',26));      //also to add elements. this is the proper way. Use whatever you like though. The above one is simpler.
     s1['k']=69;         //you can change the value associated with a key. But you cannot change the key itself. you can only delete keys and then add new ones.
+    s1.erase('c');      //delete a specific key:value pair.
     unordered_map<char,int>::iterator itr;
     for(itr=s1.begin();itr!=s1.end();itr++)   //this is best way to print the elements
     {

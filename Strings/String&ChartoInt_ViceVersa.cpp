@@ -26,5 +26,15 @@ int main()
    s1=to_string(x);
    cout<<s1<<endl;
    float z=stof(s);   //stoi,stod bhi hai.
-   cout<<z;
+   cout<<z<<endl;
+
+   //Char to Int
+   char c='7';
+   int digit=c-'0';
+   cout<<c<<endl;
+
+   //int to char
+   int val=9;
+   char d=val+'0';
+   cout<<d;
 }

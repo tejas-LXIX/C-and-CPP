@@ -3,8 +3,17 @@
 #include<algorithm>
 using namespace std;
 
+int print(vector<vector<int>> &arr)
+{
+    cout<<arr[53][61]<<endl;
+    return 0;
+}
 int main()
 {
+    int m=71,n=65;
+    vector<vector<int>> arr(m,vector<int>(n,17));   //initialising a 2d vector.
+    //passing this vector to a function.
+    cout<<print(arr);
     vector<vector<int>> vec; //vector is a dynamically allocated CONTIGUOUS array in memory. other containers aren't.
     for(int i=0;i<3;i++)
     {

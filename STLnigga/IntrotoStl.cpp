@@ -11,6 +11,12 @@ Also Easily extendable. Defining new containers that provide iterator interface 
 #include<algorithm>
 using namespace std; //everything inside stl is defined inside the namespace std.
 
+/*
+A vector is functionally same as an array. But, to the language vector is a type, and int is also a type. To a function argument, an array of any type (including vector[]) is treated as pointer. 
+A vector<int> is not same as int[] (to the compiler). vector<int> is non-array, non-reference, and non-pointer - it is being passed by value, and hence it will call copy-constructor.
+So, you must use vector<int>& (preferably with const, if function isn't modifying it) to pass it as a reference.
+*/
+
 int main()
 {
     vector<int> test(1934,69);          //initialise the vector test with 1934 elements,each element having the value 69
@@ -58,13 +64,27 @@ int main()
         else
             cout<<*itr<<endl;
     }
-    vector<int> vec2(vec.begin(),vec.begin()+3); //this copies values of vec into vec2 as [vec.begin(),vec.end())
+    vector<int> vec3(vec.begin(),vec.begin()+3); //this copies values of vec into vec3 as [vec.begin(),vec.end())
     //see birthday_chocolate.cpp in ProblemSolving
-    for(itr=vec2.begin();itr!=vec2.end();itr++)
+    for(itr=vec3.begin();itr!=vec3.end();itr++)
     {
-        if(itr==vec2.begin()+1) //if itr points to value stored in index 1 of vec,then don't print.
+        if(itr==vec3.begin()+1) //if itr points to value stored in index 1 of vec,then don't print.
         {}
         else
             cout<<*itr<<endl;
     }
+
+   vector<int> arr123;
+   for(int i=0;i<11;i++)
+   {
+       arr123.push_back(i);
+   }
+   vector<int>::iterator itrboi;
+   for(itrboi=arr123.begin();itrboi!=arr123.end();itrboi++)
+   {
+       if(itrboi+2<arr123.end())
+       {
+           cout<<*(itrboi+2)<<" ";
+       }
+   }
 }

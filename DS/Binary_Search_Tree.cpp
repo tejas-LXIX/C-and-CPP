@@ -88,7 +88,7 @@ class BST
 
         //In all these recursive searches/prints, we have to pass a TreeNode* as an argument because we need it for the recursive calls(to traverse the left or the right of the tree as required,without any looping).
         //Jahan pe recursion nahi chahiye hota,udhar we can use the root of the object directly(since it is public) without needing it to be passed as a parameter,and then traverse using a loop.
-        
+        //THE THREE BELOW ARE ALL DFS
         void printPreorder(TreeNode *r)    //Preorder(NLR)(node-left-right). First time call karte toh root is passed as argument from main. uske baad it goes on its own.
         {
           if(r==NULL)
@@ -143,7 +143,7 @@ class BST
               else if(v<temp->value)     //if the value is lesser than the current node's value,then it has to be on the left side of the node. hence temp->left
                 temp=temp->left;
               else
-                temp=temp->right;        //if the value is lesser than the current node's value,then it has to be on the right side of the node. hence temp->right
+                temp=temp->right;        //if the value is greater than the current node's value,then it has to be on the right side of the node. hence temp->right
             }
             return NULL;
           }
@@ -186,7 +186,7 @@ class BST
             printGivenLevel(r -> right, level - 1);
           }
         }
-        void printLevelOrderBFS(TreeNode * r)
+        void printLevelOrderBFS(TreeNode * r) //BFS hai ye
         {
           int h = height(r);
           for (int i = 0; i <= h; i++)    //each iteration starts from the root node,and due to the value of i we go to the desired level.

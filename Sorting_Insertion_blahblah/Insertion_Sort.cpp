@@ -5,7 +5,7 @@ using namespace std;
 //Time Complexity is O(n^2). best case is O(n).
 /*Insertion sort is a simple sorting algorithm that works similar to the way you sort playing cards in your hands. 
 The array is virtually split into a sorted and an unsorted part.
- Values from the unsorted part are picked and placed at the correct position in the sorted part*/
+Values from the unsorted part are picked and placed at the correct position in the sorted part*/
 
 /*To sort an array of size n in ascending order:
 1: Iterate from arr[1] to arr[n] over the array.

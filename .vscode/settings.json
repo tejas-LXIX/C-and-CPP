@@ -70,7 +70,8 @@
         "thread": "cpp",
         "typeindex": "cpp",
         "typeinfo": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "PASSING 2D ARRAY TO A FUNCTION USING POINTERS.C": "cpp"
     },
     "files.exclude": {
         "**/.classpath": true,

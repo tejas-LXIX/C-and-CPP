@@ -58,4 +58,12 @@ int main()
     {
         cout<<itr2->first<<"\t"<<itr2->second<<endl;
     }
+
+/*In C++11, you say auto it1 = std::next(it, 1);.
+
+Prior to that, you have to say something like:*/
+    map<char,int> mp;
+    map<char,int>::iterator it,it1;
+    it1 = it;
+    advance(it1, 1);    //if you want to set itr1 to point to the element after itr. itr1=itr+1 is not possible,hence we use advance.
 }

@@ -7,7 +7,7 @@ using namespace std;
 
 int main()
 {
-    string line="Geeks?For Geeks?is?a must?try.";
+    string line="Geeks???For Geeks?is?a must?try.";
     vector<string> tokens;
     stringstream ss(line);
     string intermediate;
@@ -19,6 +19,7 @@ int main()
     {
         cout<<tokens[i]<<endl;
     }
+    //this is one issue with getline. delimiters agar consecutively aagaye toh woh bhi token ban jaate hai. number of tokens will be number of consecutive delimiters-1
 
     //this concept can be used for any sort of delimiter.EG: It can be used to extract date,month and year from a string with DD-MM-YYYY format.
 }

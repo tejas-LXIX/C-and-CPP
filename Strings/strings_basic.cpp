@@ -67,7 +67,8 @@ s1.insert(2, "mountain", 4); // s1: abmounc def
 s1.replace(2, 5, s2, 3, 3); // s1: abgon def      starting from index 2,5 letters of s1 are replaced by (starting from index 3,3 letters of s2).
 
 s1.erase(1, 4); // s1: a def 
-s2. substr(2, 4); // agon
+s2. substr(2, 4); // agon   . substr starts at index 2, and takes 4 characters(inclusive of index 2). i.e it takes all characters upto 2+4=6 index(6 excluded).
+//str.substr(pos,len) returns all the characters starting from index pos(inclusive) to index pos+len(exclusive).
 
 s1 = "abc";
 

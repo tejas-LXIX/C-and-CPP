@@ -49,8 +49,7 @@ int main()
     vec.insert(vec.begin()+3,91); //91 is inserted at index 3 of vec. vec.begin() is index 0. vec.begin()+7 is not allowed because vec.capacity() is only 5 here.
     //FUCK THIS
     itr1=vec.begin();
-    itr2=vec.end(); //have to do this again nahi toh the memory at which itr1 points doesnt change,it remains as it was initially and therefore doesnt point to the new
-    //memory location where vec.begin() actually is
+    itr2=vec.end(); //have to do this again nahi toh the memory at which itr1 points doesnt change,it remains as it was initially and therefore doesnt point to the new memory location where vec.begin() actually is
     for(vector<int>::iterator itr=itr1;itr!=itr2;itr++)
     {
         cout<<*itr<<" "; //even though iterator is a class,it behaves like a regular pointer

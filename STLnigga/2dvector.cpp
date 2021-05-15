@@ -12,6 +12,15 @@ int main()
 {
     int m=71,n=65;
     vector<vector<int>> arr(m,vector<int>(n,17));   //initialising a 2d vector.
+    //basically, arr is a vector of vectors. Elements of arr are arranged in a row(just like any normal vector),WHERE EACH ELEMENT of arr is itself a vector of size 'n'. Each of these elements represent the columns of the vector arr.
+    /*i.e   first,a vector of 1 2 3 4 5 is inserted into arr. then 6 7 8 9 10. Then 11 12 13 14 15. And below is how they are inserted into the vector.
+
+           1 6 11       no. of rows,m=3; no. of columns,n=5;
+           2 7 12
+           3 8 13
+           4 9 14
+           5 10 15
+    */
     //passing this vector to a function.
     cout<<print(arr);
     vector<vector<int>> vec; //vector is a dynamically allocated CONTIGUOUS array in memory. other containers aren't.
@@ -48,4 +57,6 @@ int main()
     }
     cout<<endl<<vec[0].size(); //to get number of columns(no. of elements in the first vector)
     cout<<endl<<vec.size(); //to get number of rows(no. of vectors inside the big vector)
+    cout<<endl<<arr[0].size(); //to get number of columns(no. of elements in the first vector)
+    cout<<endl<<arr.size(); //to get number of rows(no. of vectors inside the big vector)
 }

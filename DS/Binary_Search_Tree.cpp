@@ -8,7 +8,12 @@ class Node
 };
 */
 
-//BINARY SEARCH TREE
+/*BINARY SEARCH TREE.
+Binary Search Tree is a node-based binary tree data structure which has the following properties:
+
+The left subtree of a node contains only nodes with keys lesser than the node’s key.
+The right subtree of a node contains only nodes with keys greater than the node’s key.
+The left and right subtree each must also be a binary search tree*/
 #define SPACE 10
 #include<iostream>
 using namespace std;
@@ -38,19 +43,19 @@ class BST
         TreeNode* root;      //pointer to the root of the BST. baaki puri linking toh root ke aage se hojaayegi because of the left and right pointers of TreeNode class.
         BST()
         {
-            root=NULL;
+          root=NULL;
         }
         bool isTreeEmpty()
         {
             if(root==NULL)
-                return true;
+              return true;
             return false;
         }
         void insertNode(TreeNode* new_node)
         {
             if(root==NULL)
             {
-                root=new_node;
+              root=new_node;
             }
             else
             {
@@ -98,7 +103,7 @@ class BST
           printPreorder(r->right);      /* then recur on right subtree */
         }
 
-        void printInorder(TreeNode *r)    //Inorder(LNR)(left-node-right). First time call karte toh root is passed as argument from main. uske baad it goes on its own.
+        void printInorder(TreeNode *r)    //Inorder(LNR)(left-node-right). First time call karte toh root is passed as argument from main. uske baad it goes on its own. PRINTS NODES IN ASCENDING ORDER FOR A BST.
         {
           if(r==NULL)
             return;
@@ -111,8 +116,8 @@ class BST
         {
           if(r==NULL)
             return;
-          printPreorder(r->left);       /* first recur on left subtree */
-          printPreorder(r->right);      /* then recur on right subtree */
+          printPostorder(r->left);       /* first recur on left subtree */
+          printPostorder(r->right);      /* then recur on right subtree */
           cout<<r->value<<" ";       /* then print data of node */
         }
 
@@ -199,7 +204,7 @@ class BST
           /* loop down to find the leftmost leaf */
           while (current -> left != NULL) {
             current = current -> left;
-          } 
+          }
           return current;
         }
 

@@ -51,14 +51,15 @@ int main()
     multimap<int,int> gquiz1;  //Multimap is similar to map with an addition that multiple elements can have same keys. Also, it is NOT required that the key value and mapped value pair has to be unique in this case. One important thing to note about multimap is that multimap keeps all the keys in sorted order always.
     gquiz1.insert(pair<int,int>(1,40));
     gquiz1.insert(pair<int,int>(2,69));
+    gquiz1.insert(pair<int,int>(2,420));
     gquiz1.insert(pair<int,int>(1,51));
     multimap<int,int>::iterator itr2;
     cout<<"The map gquiz1 is: \n"<<"KEY\tELEMENT\n";
+    gquiz1.erase(2);    //erases all KEYS with value 2. only KEY 1 is left.
     for(itr2=gquiz1.begin();itr2!=gquiz1.end();itr2++)
     {
         cout<<itr2->first<<"\t"<<itr2->second<<endl;
     }
-
 /*In C++11, you say auto it1 = std::next(it, 1);.
 
 Prior to that, you have to say something like:*/

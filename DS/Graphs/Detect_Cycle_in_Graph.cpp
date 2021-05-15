@@ -12,11 +12,11 @@ class Graph
         if(visited[v]==false)
         {   //mark the current node as visited and part of the recursion stack.
             visited[v]=true;
-            recstack[v]=true;       //we need this stack to know if a particular node has been visited or not,and if it has not been popped out yet. This is there to check if our path is going back to a node which is one of its parent nodes in this traversal,meaning that its going back to where it started from in a cycle.
+            recstack[v]=true;       //we need this stack to know if a particular node has been visited (in the current DFS Tree) or not,and if it has not been popped out yet. This is there to check if our path is going back to a node which is one of its parent nodes in this traversal,meaning that its going back to where it started from in a cycle.
             vector<int>::iterator itr;
             for(itr=adj[v].begin();itr!=adj[v].end();itr++)
             {
-                if(!visited[*itr] && isCyclicUtil(*itr,visited,recstack))   //if the adjacent vertex of v has not been visited yet OR the recursive call isCyclicUtil returns false.
+                if(!visited[*itr] && isCyclicUtil(*itr,visited,recstack))   //if the adjacent vertex of v has not been visited yet AND the recursive call isCyclicUtil returns true.
                     return true;
                 else if(recstack[*itr]) //if the node adjacent to node v, is a part of the recursion stack,meaning that it is a part of our path and we have basically reached back to it. This implies that a cycle exists.
                     return true;
@@ -34,7 +34,7 @@ class Graph
     void addEdge(int v,int w)
     {
         adj[v].push_back(w);
-        adj[w].push_back(v);    //IF YOU REMOVE THIS LINE,YOU MAKE THE GRAPH A DIRECTED GRAPH. Doing so will return "Graph doesnt contain cycle for the code in int main()". If you kepe it,then cycle exists.
+        adj[w].push_back(v);    //IF YOU REMOVE THIS LINE,YOU MAKE THE GRAPH A DIRECTED GRAPH. Doing so will return "Graph doesnt contain cycle for the code in int main()". If you keep it,then cycle exists.
     }
     bool isCyclic()     // Mark all the vertices as not visited and not part of recursion stack
     {

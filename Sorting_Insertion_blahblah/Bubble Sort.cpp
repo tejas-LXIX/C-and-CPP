@@ -21,9 +21,9 @@ int main()
                 swap=true;
             }
         }
-        cout<<"Element sorted at "<<n-i<<"'th position is "<<arr[n-1-i]<<endl;
         if(swap==false)
             break;
+        cout<<"Element sorted at "<<n-i<<"'th position is "<<arr[n-1-i]<<endl;
     }
     for(int i=0;i<n;i++)
         cout<<arr[i]<<" ";

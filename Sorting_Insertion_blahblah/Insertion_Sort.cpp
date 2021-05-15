@@ -13,7 +13,7 @@ Values from the unsorted part are picked and placed at the correct position in t
 3: If the key element is smaller than its predecessor, compare it to the elements before. Move the greater elements one position up to make space for the swapped element.*/
 
 //see GFG to understand how this works
-int* insertionsort(int arr[],int n)
+void insertionsort(int arr[],int n)
 {
     int val;
     for(int i=1;i<n;i++)
@@ -27,8 +27,6 @@ int* insertionsort(int arr[],int n)
         }
         arr[j+1]=val;
     }
-    int *ptr=arr;
-    return ptr;
 }
 
 int main()
@@ -36,14 +34,13 @@ int main()
     int array[19];
     srand(time(0));  //to randomise the inputs given to the array as input
     for(int i=0;i<19;i++)
-        {
-            int val=rand();
-            array[i]=val;
-        }
-    int *ptr=insertionsort(array,19);
+    {
+        int val=rand();
+        array[i]=val;
+    }
+    insertionsort(array,19);    //array is passed as a pointer to functions by default.
     for(int i=0;i<19;i++)
     {
-        cout<<*ptr<<" ";
-        ptr++;
+        cout<<array[i]<<" ";
     }
 }

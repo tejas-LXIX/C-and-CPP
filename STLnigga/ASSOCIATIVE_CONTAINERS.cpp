@@ -2,12 +2,12 @@
 When an item is inserted,it will be inserted in the proper location. Default criteria is <
 Also,when you remove an item from the tree,the tree is re-arranged automatically so that everything is still in order
 
-Associative containers guarantee an O(logn) search,insertion and deletion. This is why they are faster than vectors for almost all operations,other than random access because vectors give O(1) random access,whereas associative containers dont have randomm access. Traversal is required to access any value.
+Associative containers guarantee an O(logn) search,insertion and deletion. This is why they are faster than vectors for almost all operations,other than random access because vectors give O(1) random access,whereas associative containers dont have random access. Traversal is required to access any value.
 
 
 Sets are a type of associative containers in which each element has to be unique, because the value of the element identifies it. The value of the element CANNOT be modified once it is added to the set, though it is possible to remove and add the modified value of that element. 
 
-set<int,int> gquiz1;
+set<int> gquiz1;
  // insert elements in random order
     gquiz1.insert(40);
     gquiz1.insert(30);
@@ -52,7 +52,7 @@ map<int, int> gquiz1;
 
 
 Multimap is similar to map with an addition that multiple elements can have same keys. Also, it is NOT required that the key value and mapped value pair has to be unique in this case. 
-One important thing to note about multimap is that multimap keeps all the keys in sorted order always. These properties of multimap makes it very much useful in competitive programming.
+One important thing to note about multimap is that multimap keeps all the keys in sorted order always. These properties of multimap make it very much useful in competitive programming.
 Multimaps are just like maps, with the added feature that it allows duplicate keys.
 multimap<int,int> gquiz2; 
     gquiz2.insert(pair<int, int>(5, 50)); 

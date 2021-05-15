@@ -1,4 +1,4 @@
-/*
+/*  Prim's algorithm runs faster in dense graphs. Kruskal's algorithm runs faster in sparse graphs.
 How does Prim’s Algorithm Work? The idea behind Prim’s algorithm is simple, a spanning tree means all vertices must be connected. So the two disjoint subsets (discussed above) of vertices must be connected to make a Spanning Tree. And they must be connected with the minimum weight edge to make it a Minimum Spanning Tree.
 Algorithm 
 1) Create a set mstSet that keeps track of vertices already included in MST. 
@@ -9,6 +9,7 @@ Algorithm
 ….c) Update key value of all adjacent vertices of u. To update the key values, iterate through all adjacent vertices. For every adjacent vertex v, if weight of edge u-v is less than the previous key value of v, update the key value as weight of u-v. i.e keyvalue=weight of u-v
 The idea of using key values is to pick the minimum weight edge from cut. The key values are used only for vertices which are not yet included in MST, the key value for these vertices
 indicate the minimum weight edges connecting them to the set of vertices included in MST.
+O(V^2) time complexity.
 */
 #include<iostream>
 #define V 5     //a graph of 5 vertices.

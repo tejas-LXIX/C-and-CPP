@@ -2,7 +2,7 @@
 #include<algorithm>
 #include<ctime>
 using namespace std;
-int binarySearch(int arr[],int l,int r,int val) // A recursive binary search function. It returns location of val in given array arr[l..r] is present, otherwise -1.
+int binarySearch(int arr[],int l,int r,int val) // A recursive binary search function. It returns location of val in given array arr[l..r] if present, otherwise -1.
 {
     if(r>=l)
     {

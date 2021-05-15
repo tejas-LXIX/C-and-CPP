@@ -13,13 +13,14 @@ int main()
     string intermediate;
     while(getline(ss,intermediate,'?'))     //the data from stringstream ss is copied into string intermediate till the delimiter '?' is encountered. every successive getline() call first clears the string intermediate and then adds new data in it.
     {   //default delimiter is space " "
-        tokens.push_back(intermediate);
+        if(intermediate!="")    //agar ye nahi karoge,then since there are consecutive delimiters,so empty string will also get inserted into the vector. Toh print hone ke time empty spaces bhi aajayenge. See what happens when you remove this if condition.
+            tokens.push_back(intermediate);
     }
     for(int i=0;i<tokens.size();i++)
     {
         cout<<tokens[i]<<endl;
     }
-    //this is one issue with getline. delimiters agar consecutively aagaye toh woh bhi token ban jaate hai. number of tokens will be number of consecutive delimiters-1
+    //this is one issue with getline. delimiters agar consecutively aagaye toh empty spaces "" bhi token ban jaate hai. number of tokens will be number of consecutive delimiters-1
 
     //this concept can be used for any sort of delimiter.EG: It can be used to extract date,month and year from a string with DD-MM-YYYY format.
 }

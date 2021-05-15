@@ -35,7 +35,7 @@ int main()
         cout<<arr[i]<<" ";
     }
     cout<<endl;
-    selectionSort(arr,size);       // mergesort(arr,left,right) called
+    selectionSort(arr,size);
     cout <<"After Sorting"<<endl;
     for(int i=0;i<size;i++) 
     {

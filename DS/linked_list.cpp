@@ -136,13 +136,14 @@ while (current != NULL)
     in the caller. */
 *head_ref = NULL;  
 }
-Node* reverseLinkedList(Node* head)
+
+Node* reverseLinkedList(Node* head)     //dry run karo,you'll understand.
 {
     Node* current=head,*prev=NULL,*next=NULL;
     while(current!=NULL)
     {
         next=current->next; //enables us to traverse forward,while we change the "next" pointer of each node.
-        current->next=prev; //changed the "next" pointer of the node to point to the previous node.
+        current->next=prev; //changed the "next" pointer of the current node to point to the previous node.
         prev=current;   //used in the next iteration to point the "next" pointer of the successive node to the current node.
         current=next;   //to go forward to the next node.
     }

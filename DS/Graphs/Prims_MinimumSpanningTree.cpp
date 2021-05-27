@@ -52,7 +52,7 @@ void primMST(int graph[V][V])
         mstSet[u]=true;     //since this vertex has now been included in the MST.
         // Update key value and parent index of the adjacent vertices of the picked vertex.Consider only those vertices which are not yet included in MST.
         for(int v=0;v<V;v++)
-        {
+        {   //we are updating the key values for all the vertices that are connected to the vertex u.
             if(graph[u][v] && mstSet[v]==false && graph[u][v]<key[v])    // graph[u][v] isn't zero when an edge from u to v exists. mstSet[v] is false for vertices not yet included in MST.Update the key only if graph[u][v] is smaller than key[v].
             {
                 parent[v]=u;

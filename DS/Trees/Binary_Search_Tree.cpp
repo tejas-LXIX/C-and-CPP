@@ -264,7 +264,7 @@ int main()
 
     cin >> option;
     //Node n1;
-    TreeNode * new_node = new TreeNode();
+    TreeNode* new_node = new TreeNode();
 
     switch (option) {
     case 0:

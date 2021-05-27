@@ -1,7 +1,8 @@
 //SEE https://www.tutorialspoint.com/connected-vs-disconnected-graphs#:~:text=c%20d-,Disconnected%20Graph,component%20of%20the%20graph%20G for diff b/w connected/disconnected graph.
 /*A spanning tree is a subset of Graph G, which has all the vertices covered with minimum possible number of edges. Hence, a spanning tree does not have cycles and it cannot be disconnected.
 A connected graph G can have more than one spanning tree.
-
+BOTH PRIM'S AND KRUSKAL'S ALGO HAVE NO PROBLEM WITH NEGATIVE WEIGHTS OF EDGES. THIS HOLDS FOR ANY ALGO THAT FINDS MST.
+ONLY SHORTEST PATH ALGOS HAVE A PROBLEM WITH NEGATIVE WEIGHTS.
 All possible spanning trees of graph G, have the same number of edges and vertices.
 
 The spanning tree does not have any cycle (loops).

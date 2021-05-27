@@ -45,7 +45,7 @@ class Graph
             visited[i]=false;
             recstack[i]=false;
         }
-        for(int i=0;i<V;i++)     //Call the recursive helper function to detect cycle in different DFS trees
+        for(int i=0;i<V;i++)     //Call the recursive helper function to detect cycle in different DFS trees (isCyclicUtil is run for each vertex).
         {
             if(isCyclicUtil(i,visited,recstack))
                 return true;

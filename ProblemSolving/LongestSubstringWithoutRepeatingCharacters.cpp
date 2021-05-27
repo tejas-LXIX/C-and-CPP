@@ -1,14 +1,14 @@
 #include<iostream>
-#include<set>
+#include<unordered_set>
 #include<algorithm>
 #include<typeinfo>
 
 using namespace std;
 
-int lengthOfLongestSubstring(string s)
+int lengthOfLongestSubstringWithoutRepeatingCharacters(string s)
     {
-        set<char> s1;
-        set<char>::iterator itr;
+        unordered_set<char> s1;
+        unordered_set<char>::iterator itr;
         int n=s.length();
         int length=0,i=0,j=0;
         while(i<n && j<n)
@@ -30,6 +30,6 @@ int lengthOfLongestSubstring(string s)
 
 int main()
 {
-    string s="dvdf";
-    cout<<lengthOfLongestSubstring(s);
+    string s="pwwkew";
+    cout<<lengthOfLongestSubstringWithoutRepeatingCharacters(s);
 }

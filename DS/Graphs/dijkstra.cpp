@@ -5,7 +5,9 @@
 ….a) Pick a vertex u which is not there in sptSet and has minimum distance value. Basically,the vertex which hasnt been visited yet and is also the closest from the source out of the given unvisited vertices.
 ….b) Include u to sptSet.
 ….c) Update distance value of all adjacent vertices of u. To update the distance values, iterate through all adjacent vertices. For every adjacent vertex v, if sum of distance value of u (from source) and weight of edge u-v, is less than the distance value of v, then update the distance value of v.*/
-
+/*
+BOTH PRIM'S AND KRUSKAL'S ALGO HAVE NO PROBLEM WITH NEGATIVE WEIGHTS OF EDGES. THIS HOLDS FOR ANY ALGO THAT FINDS MST.
+ONLY SHORTEST PATH ALGOS HAVE A PROBLEM WITH NEGATIVE WEIGHTS.*/
 #include<iostream>
 #include<vector>
 using namespace std;

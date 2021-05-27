@@ -6,6 +6,7 @@ using namespace std;
 //Topological sort is basically,we print that vertex first which has the in-degree=0. We then delete this vertex(not actual deletion),basically we detach the vertex and all its output edges from the graph(IN OUR BRAIN ONLY).
 //We then call the function again and repeat the same,always choosing the vertex with in-degree=0 and printing it.
 //TOPOLOGICAL SORT ONLY WORKS FOR DIRECTED ACYCLIC GRAPHS.
+//A directed acyclic graph is a directed graph that has no cycles.
 //iss algo ka dry run karo to understand. Dry run waala graph is in the DSA folder.
 class Graph
 {

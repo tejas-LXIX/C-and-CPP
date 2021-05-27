@@ -10,6 +10,7 @@ NOTHING OF THE SORT LIKE LEFT SIDE ELEMENT SHOULD BE SMALLER OR WHATEVER. NO! BS
 Min-Heap: In a Min-Heap the key present at the root node must be minimum among the keys present at all of it’s children. The same property must be recursively true for all sub-trees in that Binary Tree.
 */
 //implemented as an array
+//if you want to use it in problem solving,USE PRIORITY QUEUE TO IMPLEMENT MAX_HEAP. SEE STLnigga FOLDER.
 #include<iostream>
 #include<math.h> //important to get the height of the heap.
 using namespace std;
@@ -27,7 +28,7 @@ class MinHeap
             heap_size=0;
             harr=new int[cap];
         }
-         int parent(int i) { return (i-1)/2; }
+        int parent(int i) { return (i-1)/2; }
   
         // to get index of left child of node at index i
         int left(int i) { return (2*i + 1); }
@@ -51,13 +52,13 @@ class MinHeap
         }
         void printHeap()
         {
-            for(int i=0;i<heap_size;i++)
-                cout<<harr[i]<<" "; 
-            cout<<endl;
+          for(int i=0;i<heap_size;i++)
+            cout<<harr[i]<<" "; 
+          cout<<endl;
         }
         int height()
         {
-            return ceil(log2(heap_size+1))-1;   //we need math.h for this function. ceil returns the smallest integer greater than or equal to the passed parameter.
+          return ceil(log2(heap_size+1))-1;   //we need math.h for this function. ceil returns the smallest integer greater than or equal to the passed parameter.
         }
         void insertKey(int val)
         {

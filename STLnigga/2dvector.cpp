@@ -57,6 +57,8 @@ int main()
     }
     cout<<endl<<vec[0].size(); //to get number of columns(no. of elements in the first vector)
     cout<<endl<<vec.size(); //to get number of rows(no. of vectors inside the big vector)
+
+    
     cout<<endl<<arr[0].size(); //to get number of columns(no. of elements in the first vector)
     cout<<endl<<arr.size(); //to get number of rows(no. of vectors inside the big vector)
 }

@@ -31,7 +31,7 @@ int main()
    //Char to Int
    char c='7';
    int digit=c-'0';
-   cout<<c<<endl;
+   cout<<digit<<endl;
 
    //int to char
    int val=9;

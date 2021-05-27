@@ -20,7 +20,6 @@ bool isOperand(char c)
 string PostfixtoInfix(string postfix)    //see the rules and pseudocode from the DSA Photos folder.
 {
     stack <string> s;
-    string infix;
     for(int i=0;i<postfix.length();i++)
     {
         if(isOperand(postfix[i]))

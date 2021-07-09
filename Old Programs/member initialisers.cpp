@@ -21,7 +21,7 @@ int main()
 }
 
 sally::sally(int no1,int no2)
-:y(no2)           /* this syntax of :y(no2) is only written where the function has been defined. not where the function has been prototyped.*/
+:y(no2)           /* this syntax of :y(no2) is only written where the function has been defined. not where the function has been prototyped. Is compulsory to initialise const values.*/
 {
     x=no1;
 }

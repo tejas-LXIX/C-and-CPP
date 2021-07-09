@@ -1,6 +1,8 @@
 #include<iostream>
 using namespace std;
-
+/*Like friend class, a friend function can be given a special grant to access private and protected members. A friend function can be: 
+a) A member of another class 
+b) A global function */
 class sally
 {
 public:

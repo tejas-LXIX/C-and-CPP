@@ -33,5 +33,7 @@ int main()
 {
     Teju <int> tej(71,35);
     cout<<"The Bigger Age is : "<<tej.compareAge()<<"\n";
-    Teju <char> tejas('a');
+    Teju <float> tejas(71.1232321,35.9726392);
+    cout<<"The Bigger Age is : "<<tejas.compareAge()<<"\n";
+    Teju <char> tejaschar('a');
 }

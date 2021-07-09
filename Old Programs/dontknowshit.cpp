@@ -44,7 +44,8 @@ int main()
     {
         for(int j=0;j<n;j++)
         {
-            cout<<list12[i][j];
+            cout<<list12[i][j]<<" ";
         }
+        cout<<endl;
     }
 }

@@ -35,11 +35,11 @@ int main()
     int x=5;
     cout<<x<<endl;
     cout<<::x<<endl;
-    Shitboi tejas,bitch;
+    Shitboi tejas,shaurya;
     tejas.printStatement();
     tejas.setString("helllo");
-    bitch.setString("NIGGA");
+    shaurya.setString("NIGGA");
     tejas.printString();
-    bitch.printString();
-    cout<<endl<<bitch.r;
+    shaurya.printString();
+    cout<<endl<<shaurya.r;
 }

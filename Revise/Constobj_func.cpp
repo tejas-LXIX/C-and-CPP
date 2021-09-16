@@ -3,7 +3,7 @@ using namespace std;
 
 /* ":" must be used for     1.For initialization of non-static "const" data members. 2.For initialization of reference members (&x) type ke
 3. For initialization of member objects which do not have default constructor(they have parameterized constructor).(See Composition.cpp). Use initializer
-//list always for default constructor types too to avoid confusion. Also,this is faster too than assigning values in the body.
+list always for default constructor types too to avoid confusion. Also,this is faster too than assigning values in the body.
 4. When constructor’s parameter name is same as data member
 5. For initialisation of base class members. The parameterized constructor of the base class can only be called using Initializer List.*/
 class Yapral

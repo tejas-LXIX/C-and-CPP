@@ -22,6 +22,7 @@ int main()
     int &p=x;
     /*p=7;
     p=y; this works,im not sure why because online its stated that references are fixed connections.*/
+    p=9694;
     cout<<p<<endl;
     swap(x,y); //call by reference because these parameters are accepted into the function by assigning them references
     cout<<x<<" "<<y;

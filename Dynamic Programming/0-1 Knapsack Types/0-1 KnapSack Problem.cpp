@@ -24,11 +24,11 @@ int iterativeKnapsack(int weights[],int values[],int W,int N)   //BOTTOM-UP(ITER
 {
     for(int i=0;i<N+1;i++)
     {
-        for(int j=0;j<W+1;j++)
-        {
-            if(i==0 || j==0)
-                dp[i][j]=0;
-        }
+        dp[i][0]=0;
+    }
+    for(int j=0;j<W+1;j++)
+    {
+        dp[0][j]=0;
     }
     for(int i=1;i<N+1;i++)
     {
@@ -43,6 +43,12 @@ int iterativeKnapsack(int weights[],int values[],int W,int N)   //BOTTOM-UP(ITER
                 dp[i][j]=dp[i-1][j];    //if item not included in the knapsack,because its weight is more than remaining capacity of knapsack
             }
         }
+    }
+    for(int i=0;i<N+1;i++)  //just to print out the dp matrix for visualisation
+    {
+        for(int j=0;j<W+1;j++)
+            cout<<dp[i][j]<<" ";
+        cout<<endl;
     }
     return dp[N][W];
 }

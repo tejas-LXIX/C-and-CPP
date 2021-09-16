@@ -61,7 +61,7 @@ class myComparator
 public:
     int operator() (const Point& p1, const Point& p2)
     {
-        return p1.getX() > p2.getX();
+        return p1.getX() > p2.getX();   //so that the larger element is placed later in the queue. this makes the pq a min heap.
     }
 };
 

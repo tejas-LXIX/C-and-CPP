@@ -32,7 +32,7 @@ class Complex
         }
         friend Complex operator+(Complex&,Complex&); // The global operator function is made friend of this class so that it can access private members 
 
-        void operator-()
+        void operator-()    //non-static member function. Unary operator. therefore,no arguments needed.
         {
             real=-real;
             imag=-imag;

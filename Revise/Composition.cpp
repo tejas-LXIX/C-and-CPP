@@ -4,9 +4,10 @@ using namespace std;
 
 class Address
 {
-    private:
+    public:
         string House,Colony,City;
     public:
+        int x=73;
         Address(string a,string b,string c)
         {
             House=a; Colony=b; City=c;
@@ -46,6 +47,7 @@ class BioData
         }
         void printInfo()
         {
+            cout<<address1.x<<endl;
             address1.printData();
             person1.printData();
         }

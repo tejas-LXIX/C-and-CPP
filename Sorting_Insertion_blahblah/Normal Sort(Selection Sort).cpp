@@ -5,7 +5,7 @@ using namespace std;
 
 void selectionSort(int arr[],int size)
 {
-    for(int i=0;i<size;i++) //after each iteration of the 'i' loop,one element from the array is sorted(placed at its appropriate position.)
+    for(int i=0;i<size;i++) //after each iteration of the 'i' loop,one element from the array is sorted(placed at its appropriate position.) In the first iteration,the smallest element in the array gets placed at the starting position; in second itr,second smallest element placed and so on.
     {
         for(int j=i+1;j<size;j++) //each element is compared with the elements after it. if the below condition is satisfied,then the elements swap places.
         {

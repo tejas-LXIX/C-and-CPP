@@ -26,7 +26,9 @@ class Nigga
         {cout<<"print static shit\n";}
         void print_shit()
         {cout<<"print shit\n";
-        cout<<l;}  //allowed since static data members can be accessed by normal functions
+        cout<<l<<endl;
+        l=12;
+        cout<<l;}  //allowed since static data members can be accessed and modified by normal functions
         ~Nigga()
         {
             cout<<"inside destructor\n";

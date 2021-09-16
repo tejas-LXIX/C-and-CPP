@@ -23,7 +23,7 @@ void Sally_friend(Sally obj)
 }
 class Nigga
 {
-    public:
+    public:     //Friend class also requires a base class object to be able to access the data members and methods of the base class through the base class object.
         void showSecret(Sally sa)
         {
             sa.x=1069;

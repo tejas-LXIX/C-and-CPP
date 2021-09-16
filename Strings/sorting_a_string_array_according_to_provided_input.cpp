@@ -19,7 +19,7 @@ bool compare(string x,string y)
 
 int main()
 {
-    vector<string> vec={"hello","geeksforgeeks","niggarandi","iaintfuckinwithyou","yolo","bitchassnigga"};
+    vector<string> vec={"hello","geeksforgeeks","kaaficomplex","iaintfuckinwithyou","yolo","westlandwapiti"};
     string str_order="qwertyuiopasdfghjklzxcvbnm";
     for(int i=0;i<str_order.length();i++)
     {

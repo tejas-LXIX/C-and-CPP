@@ -13,7 +13,7 @@ class Sally
         int y=35;
     public:
         Sally()
-        {}
+        {cout<<"Constructor for sally base class"<<endl;}
         Sally(int,int);
         void printInfo()
         {
@@ -41,10 +41,12 @@ class Sally_daughter : public Sally{
     private:
         int a;
     public:
+        Sally_daughter()
+        {cout<<"Constructor for sally daughter"<<endl;}
         void printValue()
         {
             //cout<<x;  wont work because x is private and derived classes dont inherit access to private members.
-            cout<<y<<endl; //y is protected and therefore it's access is inherited by the derived class. so directly use kar sakte hai without requiring an object
+            cout<<y<<endl; //y is protected and therefore it's access is inherited by the derived class. so directly use kar sakte hai without requiring an object. if multiple classes have same name for a variable,then you can use cout<<Sally::y;
             printInfo();
         }
 };

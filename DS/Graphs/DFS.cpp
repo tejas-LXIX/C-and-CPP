@@ -8,7 +8,7 @@ using namespace std;
 
 class Graph{
     int V;
-    vector<int>* adj;   //pointer to the adjaceny list.
+    vector<int>* adj;   //pointer to the adjacency list.
     public:
         Graph(int V)
         {

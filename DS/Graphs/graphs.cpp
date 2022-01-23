@@ -3,8 +3,7 @@
 #include<bits/stdc++.h> 
 using namespace std; 
 
-// A utility function to add an edge in an 
-// undirected graph. 
+// A utility function to add an edge in an undirected graph. 
 void addEdge(vector<int> adj[], int u, int v) 
 { 
 	adj[u].push_back(v);    //push the node v into the u'th vector in adj.
@@ -12,8 +11,7 @@ void addEdge(vector<int> adj[], int u, int v)
 	//we do this because this is an undirected graph. So,an edge from u to v is also an edge from v to u.
 } 
 
-// A utility function to print the adjacency list 
-// representation of graph 
+// A utility function to print the adjacency list representation of graph 
 void printGraph(vector<int> adj[], int V) 
 { 
 	for (int v = 0; v < V; ++v) 

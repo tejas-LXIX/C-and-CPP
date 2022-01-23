@@ -122,12 +122,12 @@ void print_array(int x[][5],int dim1)  //best to use pointers rather than x[][5]
 }
 void print_mij(int *m, int dim1, int dim2) //correct solution if you want to pass both dimensions together. using print_array with x[][] is illegal.
 { //error dikhayega. so best to use pointers for multidimensional arrays.
-for (int i = 0; i!=dim1; i++) {
-for (int j = 0; j!=dim2; j++)
-cout << m[i*dim2+j] << '\t'; // obscure. REMEMBER THIS EXPRESSION. This works because it is also converted to *(m+i*dim2 +j) just like the array m is
-//converted from m[i][j] to *(*(m+i)+j) 
-//i*dim2 is done so as to move from one row to the other.
-//eg: dim1=2,dim2=5 in the above array. therefore to access the elements of second row(i=1),we get 1*5+j which gives m[5+j] which starts giving elements
-//of the second row completely skipping the first row because of 5
-}
+    for (int i = 0; i!=dim1; i++) {
+        for (int j = 0; j!=dim2; j++)
+            cout << m[i*dim2+j] << '\t'; // obscure. REMEMBER THIS EXPRESSION. This works because it is also converted to *(m+i*dim2 +j) just like the array m is
+        //converted from m[i][j] to *(*(m+i)+j) 
+        //i*dim2 is done so as to move from one row to the other.
+        //eg: dim1=2,dim2=5 in the above array. therefore to access the elements of second row(i=1),we get 1*5+j which gives m[5+j] which starts giving elements
+        //of the second row completely skipping the first row because of 5
+    }
 }

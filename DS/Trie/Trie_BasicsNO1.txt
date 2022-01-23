@@ -1,0 +1,70 @@
+https://www.hackerearth.com/practice/data-structures/advanced-data-structures/trie-keyword-tree/tutorial/
+In computer science, a trie, also called digital tree or prefix tree, is a type of k-ary search tree, a tree data structure used for locating specific keys from within a set. These keys are most often strings, with links between nodes defined not by the entire key, but by individual characters. In order to access a key (to recover its value, change it, or remove it), the trie is traversed depth-first, following the links between nodes, which represent each character in the key.
+See the photo https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Trie_example.svg/1024px-Trie_example.svg.png. Tries are an extremely special and useful data-structure that are based on the prefix of a string. They are used to represent the “Retrieval” of data and thus the name Trie.
+A Trie is a special data structure used to store strings that can be visualized like a graph. It consists of nodes and edges. Each node consists of at max 26 children and edges connect each parent node to its children. These 26 pointers are nothing but pointers for each of the 26 letters of the English alphabet. A separate edge is maintained for every edge. Basically, 0 -> a, 1 -> b etc.
+
+A Trie consists of a special node called the ROOT NODE. This node doesn't have any incoming edges. It only contains 26 outgoing edfes for each letter in the alphabet and is the root of the Trie.
+
+VERY IMPORTANT STATEMENT.
+FORMALLY, A TRIE IS A ROOTED TREE, WHERE EACH EDGE OF THE TREE IS LABELED BY SOME LETTER. ALL OUTGOING EDGES FROM ONE NODE MUST HAVE DIFFERENT LABELS.
+
+
+A Trie has two data members. An array of size 26 and a boolean flag(false by default). Basically, each element of the array represents a specific alphabet (0->a,1->a,25->z). The array is of type "Trie" itself i.e each element of the Trie structure points to another Trie.
+
+SEE DSA PHOTOS FOLDER. SEE DSA PHOTOS FOLDER. SEE DSA PHOTOS FOLDER. SEE DSA PHOTOS FOLDER. SEE DSA PHOTOS FOLDER.
+
+Example:
+INSERT FUNCTION. We will be inserting the words "apple","apps","apxl","bac","bat" in the Trie. Whenever we insert words, we start with the root. We have the root node which has an array of 26 empty "Trie" references (NULL).
+1. FOR "apple": 
+    FOR "a": We go to the root node and ask whether "a" exists. Since root node array is empty, so "a" is inserted at the 0th index (a->0). Inserting "a" basically means that a new Trie node is created and root[0] now points to this new Trie node. The "a" as a character is not inserted into the root node. Only the zeroth index now holds a reference to a new Trie node,instead of being empty like the other nodes. This new "Trie" node is obviously the same as the root node. Has the same array of size 26 and a boolean flag.
+    FOR "p": To come to "p", we will come to "a" ka reference Trie (let it be Trie1). Even here, the reference trie will have an array of 26 empty "Trie" references (NULL). So, we ask this Trie if it has "p". It doesn't,so we insert a "p" into the Trie i.e we create a new Trie (Trie2), and the reference to this new Trie is stored in Trie1[15] (since p->15).
+    FOR "p": Same step as above. Come to "p" ka reference Trie (let it be Trie2). Insert "p" in Trie2 i.e create a new Trie (Trie3) and the reference to this new Trie is stored in Trie2[15] (since p->15).
+    FOR "l": Same step as above. Come to "p" ka reference Trie (let it be Trie3). Insert "l" in Trie3 i.e create a new Trie (Trie4) and the reference to this new Trie is stored in Trie3[11] (since l->11).
+    FOR "e" : Same step as above. Come to "l" ka reference Trie (let it be Trie4). Insert "e" in Trie4 i.e create a new Trie (Trie5) and the reference to this new Trie is stored in Trie4[4] (since e->4).
+    Trie5: Since the word has been completely traversed, set the boolean flag of the last reference (here, it's Trie5) to "true". So, Trie5 boolean flag set to "true" signifies that the word has ended (the actual word can be discerned by the chain of Trie nodes that have come before it).
+
+    Basically, Trie1 represents all the words whose first letter is "a". Trie2 represents all the words whose first two letters are "ap". Trie3 for "app". Trie4 for "appl". Trie5 for "apple".
+
+2. FOR "apps":
+    FOR "a": We go to the root node and ask whether "a" exists. "a" exists already since it was inserted for the word "apple". So,we wont insert anything, we will just move to the reference pointer of "a" in root node (root[0]) i.e we move to Trie1.
+    FOR "p": We go to Trie1 and ask whether "p" exists. It does since it was inserted for the word "apple". So,we wont insert anything, we will just move to the reference pointer of "p" in Trie1 node (Trie1[15]) i.e we move to Trie2.
+    FOR "p": We go to Trie2 and ask whether "p" exists. It does since it was inserted for the word "apple". So, we go to Trie3.
+    FOR "s": We go to Trie3 and ask whether "s" exists. It does not exist (only "l" exists in Trie3. The entry for "s" is empty). So we create a new Trie (let it be Trie6) and we store the reference of Trie6 in Trie3[18] (s->18).
+    Trie6: Since the word has been completely traversed, set the boolean flag of the last reference (here, it's Trie6) to "true". This basically denotes that the word has ended here i.e a word "apps" exists in the Trie.
+
+3. FOR "apxl":
+    FOR "x": We reach Trie2 since "ap" is common between "apxl" and "apple". In Trie2, we dont have "x". So we insert "x" (create a new Trie Trie7) and store its reference in Trie2[23] (x->23).
+    FOR "l": We reach Trie7. Trie7 has no references (empty array). So, we create a new Trie Trie8 and store its reference in Trie7[11] (l->11).
+
+4. FOR "bac":
+    FOR "b": Go to root and ask whether "b" exists. It doesn't. So insert "b".
+    Do same for "a" and "c". Just follow above steps.
+
+5. FOR "bat":
+    DO the same thing. "ba" already exists. bas "c" waale Trie node mein ek "t" ki entry bhi aajayegi. SEE DSA PHOTOS FOLDER.
+
+
+
+SEARCH FUNCTION.
+Basically, we have the whole Trie structure created. Now all we have to do is just start at the root node and go to the references of each letter. If we reach a Trie that has the boolean flag set to "true" implies that such a word exists. If we reach a NULL pointer, implies that the word does not exist.
+EG: Search for "apps" i.e check if the word "apps" exists in the Trie structure or not.
+    Start at root node. Check for "a" in root node. "a" exists in the root node and it points to Trie1. So, go to Trie1 and check for "p".
+    "p" exists in Trie1 and it points to Trie2. So, go to Trie2 and check for "p" again.
+    "p" exists in Trie2 and it points to Trie3. So, go to Trie3 and check for "s".
+    "s" exists in Trie3 and it points to Trie6. So, go to Trie6.
+    Trie6 has it's boolean flag set to "true". So, this tells us that the word "apps" exists in the Trie structure.
+
+EG: Search for "appl"
+    Same procedure as above till "app".
+    For "l": "l" exists in Trie3 and it points to Trie4. So, we go to Trie4. Trie4 contains "e" and we see that it's boolean flag is set to "false". This implies that the word "appl" does not exist in the Trie structure.
+
+
+
+STARTS WITH
+Basically, check if any word in the Trie structure starts with the given "word".
+EG: check if any word in the Trie starts with "ba".
+    Start at root node. Check for "b" in root node. "b" exists. So go to the Trie node that it points to.
+    In this Trie node, check for "a". "a" does exist and it points to another Trie. Therefore, we do have a word that starts with "ba". We dont know what that word is. We just know that such a word exists.
+
+EG: Search for prefix "apd"
+    "ap" does exist. But when you try to access "d" in the "p" waala trie (Trie2), you will get NULL. This tells us that there is no word that starts with "apd". Basically, Trie2[3] is NULL.
